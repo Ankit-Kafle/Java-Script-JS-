@@ -233,3 +233,90 @@ let plainpath = isyouinnocent
         : "You are doing unfaithful thing";
 
 console.log(plainpath);
+
+//USER INPUT
+// alert("Hare Krishna")
+// let myBoolean=confirm("OK==True\n Cancel==False");
+// console.log(myBoolean);
+
+
+// let name= prompt("please enter your name");
+//this ?? operator is a collesking operator, if name has a value then it log to the console and then if it doesnot or of it's null or undefined then send another type of console
+// console.log(name ??"you didn't enter your name");
+
+// if(name){
+//     if(name==" "){
+//       console.log("you didn't enter any name");   
+//     }
+//     else{
+//     // console.log(name);
+//     console.log(name.length);
+//     console.log(name.trim().length);
+//     console.log(name.trim());
+//     } 
+// }
+// else{
+//     console.log("you didn't enter any name");
+// }
+
+
+
+//LOOPS
+
+//for loop
+let name="DaVe";
+let counter=0;
+let myLetter;
+while(true){
+    myLetter= name[counter];
+    console.log(myLetter);
+    if(myLetter==="v")
+        break;
+    counter++  
+}
+
+
+
+//ERROR and Error handling
+
+// const name="Dave";   this is ok
+//         name="Joe";      error occurs here
+//         console.log(name);      there is no catch block so program get crashes here
+
+
+
+const makeError = ()=>{    //makeError() is called
+    try{                   //JS enters the try block
+     const name="Dave";    //const name = "Dave"; → OK
+        name="Joe";        //name = "Joe"; → ❌ Error occurs
+    }                      // JavaScript stops the try block immediately.Control jumps to catch(err)
+    catch(err){            //The error is caught, not crashed
+        console.log(err);  //  print the error
+
+     console.error(err); //gives error symbol 
+
+    console.warn(err);  //gives warning symbol
+
+    console.table(err);   // gives error in table form
+
+    console.error(err.message); // giver error in message like form
+    console.error(err.name); // giver error name
+    console.error(err.stack); // giver most of the detail
+
+    }
+};
+makeError();
+   
+
+
+//creating our own custom error essentially
+const customError = ()=> {
+    try{
+        throw new Error("This is my custom error message");
+    }
+    catch(err){
+        console.log(err.message);
+    }
+};
+customError();
+
