@@ -261,20 +261,6 @@ console.log(plainpath);
 
 
 
-//LOOPS
-
-//for loop
-let name="DaVe";
-let counter=0;
-let myLetter;
-while(true){
-    myLetter= name[counter];
-    console.log(myLetter);
-    if(myLetter==="v")
-        break;
-    counter++  
-}
-
 
 
 //ERROR and Error handling
@@ -309,6 +295,7 @@ makeError();
    
 
 
+
 //creating our own custom error essentially
 const customError = ()=> {
     try{
@@ -319,4 +306,106 @@ const customError = ()=> {
     }
 };
 customError();
+
+// for loop
+let name="Dave"
+for(let i=0;i<=name.length;i++)
+{
+    console.log(name.charAt(i));
+}
+
+
+//while loop
+let gum = 1;
+while(gum<=5) {
+    console.log(gum);
+    gum++
+}
+
+
+//break condition
+let nima="dave";
+let counter=0;
+let myLetter;
+while(true){
+    myLetter=name[counter];
+    console.log(myLetter);
+    if(myLetter==="v")
+        break;
+    counter++;
+}
+
+
+//do while
+let pum=0;
+do{
+    console.log(pum);
+    pum++;
+
+}
+while(pum<=5);
+
+
+//continue condition
+for (let i = 1; i <= 5; i++) {
+    if (i === 3 || i===4) {
+        continue;         // Skip the rest of the loop for i = 3
+    }
+    console.log(i);       // Only prints 1, 2, 4, 5
+}
+
+
+// WEB STORGE API. IT IS NOT PART OF THE DOM-REFERS TO THE WINDOW API
+// AVAILABLE TO JS VIA THE GLOBAL VARIABLE WINDOW
+// WE DO NOT HAVE TO TYPE WINDOW. IT IS IMPLIED
+//window is the global object of JavaScript in the browser that represents the browser window and contains all global variables, functions, and objects.
+
+console.log(window);
+
+// window.alert("hey");   &   alert("hey"); is the same thing to do
+
+
+//Session storage keep the data during the sesssion i.e while we are logged into a website.Once session is Close data is gone.
+
+//Local Storage will store persistent data and it will continue to store that data in the browser.
+
+// This both storage store the data only in string form 
+
+const myArray = ["eat","sleep","code"];
+sessionStorage.setItem("mySessionStore",myArray);
+const mySessionDATA = sessionStorage.getItem("mySessionStore");
+console.log(mySessionDATA); //this array data get printed completely in string form inorder to retrieve it in its orginal form we use json method
+
+
+const myLIFE = ["Chant krishnas","eat krishnas","Sing and Dance krishnas"];
+sessionStorage.setItem("mySessionStore",JSON.stringify(myLIFE));
+const myDATA = JSON.parse(sessionStorage.getItem("mySessionStore"));
+console.log(myDATA);
+
+
+
+const myObject= {
+    name:"Ankit",
+    hobbies:["Sri","Ram"],
+    logName: function(){
+        console.log(this.name);
+    }
+};
+
+localStorage.setItem("myLocalStore",JSON.stringify(myObject));
+// localStorage.removeItem("myLocalStore");   IT REMOVE ONE ITEM OF LOCAL STORAGE 
+localStorage.clear();  //used to clear all the content of localStorage
+const myLocal= JSON.parse(localStorage.getItem("mySessionStore"));
+console.log(myLocal);
+
+// To print the key value of seesion storage
+const key = sessionStorage.key(0);
+console.log(key);
+
+// Way to find how many items are in local storage
+const st= sessionStorage.length;
+console.log(st);
+
+
+
 
